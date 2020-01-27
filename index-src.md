@@ -5,15 +5,6 @@
 
 ---
 
-<style type="text/css">
-<!--
-h1 { margin-top: 50px; }
-h2 { margin-top: 30px; }
-details { margin-top: 8px; }
-div.appendix { border-style: solid; padding: 12px }
---> 
-</style>
-
 # **p5.js でゲーム制作**
 
 # 講師自己紹介
