@@ -132,7 +132,9 @@ Flappy Bird を抽象化した、次のようなミニゲームを作る
 以上が今回の主役となる
 
 <details>
-<summary>補足（上級）： 名前の重要性</summary><div class="appendix">
+<summary>補足（上級）： 名前の重要性</summary>
+
+<div class="appendix">
 
 名前は極めて重要である、という話はしばしば聞かれます。  
 例えば：
