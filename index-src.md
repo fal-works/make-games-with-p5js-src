@@ -60,6 +60,7 @@
 
 なにいってだこいつ、と思った人は正常です。これがジャバスクリプトだ！  
 気楽に書けるのがメリットであるはずの p5.js で、がっちり環境を整える人はあまり多くはないでしょうから、慣れてきてから調べるのでも遅くないと思います。
+
 </div></details>
 
 # p5.js スケッチの基本構造
@@ -90,14 +91,14 @@ function draw() {
 
 ### 公式のリファレンス
 
-https://p5js.org/reference/
+[https://p5js.org/reference/](https://p5js.org/reference/)
 
 
 # Flappy Bird ライクなゲームを作る
 
 ## Flappy Bird とは
 
-[Flappy Bird Gameplay | IGN | YouTube](https://www.youtube.com/watch?v=fQoJZuBwrkU)
+[Flappy Bird Gameplay - IGN - YouTube](https://www.youtube.com/watch?v=fQoJZuBwrkU)
 
 ![Flappy Bird (image)](https://img.youtube.com/vi/fQoJZuBwrkU/0.jpg)
 
@@ -136,6 +137,7 @@ Flappy Bird を抽象化した、次のようなミニゲームを作る
 名前は極めて重要である、という話はしばしば聞かれます。  
 例えば：
 [名前重要 | プログラマが知るべき97のこと](https://xn--97-273ae6a4irb6e2hsoiozc2g4b8082p.com/%E3%82%A8%E3%83%83%E3%82%BB%E3%82%A4/%E5%90%8D%E5%89%8D%E9%87%8D%E8%A6%81/)
+
 </div></details>
 
 <details>
@@ -146,6 +148,7 @@ Flappy Bird を抽象化した、次のようなミニゲームを作る
 例えば、初期案の見た目から「ブロック」と名付けちゃったけど、もしグラフィックを差し替えてブロック状に見えなくなったら、それはもうブロックじゃないんじゃないか？ など色々考えられます。
 
 事前に予想できる範囲で極力適切な名前をつけるとしても、作りたいものの最終形が変化したら個々の名前も変化するのは仕方ない、と考えて都度修正していくことも必要かもしれません。
+
 </div></details>
 
 <details>
@@ -180,6 +183,7 @@ const personB = { name: "山田太郎", birthYear: 1984 }; // 別人
 細かいことは文脈次第であり、ひとまず本ワークショップでは、ゲーム空間内を移動できるような物体、つまり少なくとも「位置」と「速度」を持つような物体のことを「エンティティ」と呼んでいます。
 
 「エンティティ」（entity）以外の用語候補としては、「ゲームオブジェクト」（game object）や「アクター」（actor）などがありえます。
+
 </div></details>
 
 
