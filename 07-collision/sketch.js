@@ -117,8 +117,10 @@ function resetGame() {
   // 状態をリセット
   gameState = "play";
 
-  // 全エンティティをリセット
+  // プレイヤーを作成
   player = createPlayer();
+
+  // ブロックの配列準備
   blocks = [];
 }
 

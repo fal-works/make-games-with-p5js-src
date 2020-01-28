@@ -86,7 +86,10 @@ function drawGameOverScreen() {
 
 /** ゲームの初期化・リセット */
 function resetGame() {
+  // プレイヤーを作成
   player = createPlayer();
+
+  // ブロックの配列準備
   blocks = [];
 }
 

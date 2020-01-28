@@ -68,7 +68,10 @@ function setup() {
   rectMode(CENTER);
   colorMode(HSB, 360, 100, 100, 100);
 
+  // プレイヤーを作成
   player = createPlayer();
+
+  // ブロックを作成
   block = createBlock(300); // とりあえず画面中央の高さで
 }
 

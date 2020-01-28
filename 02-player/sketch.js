@@ -41,6 +41,7 @@ function setup() {
   createCanvas(800, 600);
   rectMode(CENTER);
 
+  // プレイヤーを作成
   player = createPlayer();
 }
 

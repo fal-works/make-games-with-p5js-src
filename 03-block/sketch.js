@@ -59,7 +59,10 @@ function setup() {
   createCanvas(800, 600);
   rectMode(CENTER);
 
+  // プレイヤーを作成
   player = createPlayer();
+
+  // ブロックを作成
   block = createBlock(300); // 指定したy座標で作成。とりあえず画面中央の高さで
 }
 
