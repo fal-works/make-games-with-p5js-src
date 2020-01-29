@@ -27,9 +27,14 @@ function applyJump(entity) {
 }
 
 function drawPlayer(entity) {
-  noStroke();
-  fill("#ffb677");
-  square(entity.x, entity.y, 40, 8);
+  noFill();
+  strokeWeight(6);
+  stroke(255);
+  let time = frameCount * 0.2;
+  let transformValue = 5 * sin(time);
+  let width = 56 + transformValue;
+  let height = 56 - transformValue;
+  ellipse(entity.x, entity.y, width, height);
 }
 
 // ブロックエンティティ用
@@ -44,9 +49,37 @@ function createBlock(y) {
 }
 
 function drawBlock(entity) {
-  noStroke();
-  fill("#5f6caf");
-  rect(entity.x, entity.y, 80, 400, 8);
+  push();
+
+  translate(entity.x, entity.y);
+  blendMode(ADD);
+  strokeWeight(8);
+  noFill();
+
+  stroke(128);
+  rect(0, 0, 80, 400);
+
+  // noise() の扱いが雑なのと無駄が多いのとで、あまり良いコードではありません
+
+  let x, y;
+  let noiseTime = frameCount * 0.03;
+
+  stroke(192, 0, 0);
+  x = 50 * (-0.5 + noise(noiseTime));
+  y = 50 * (-0.5 + noise(noiseTime + 100));
+  rect(x, y, 80, 400);
+
+  stroke(0, 128, 0);
+  x = 50 * (-0.5 + noise(noiseTime + 200));
+  y = 50 * (-0.5 + noise(noiseTime + 300));
+  rect(x, y, 80, 400);
+
+  stroke(0, 0, 128);
+  x = 50 * (-0.5 + noise(noiseTime + 400));
+  y = 50 * (-0.5 + noise(noiseTime + 500));
+  rect(x, y, 80, 400);
+
+  pop();
 }
 
 // ---- ゲーム全体に関わる変数 --------------------------------------------------
@@ -79,7 +112,7 @@ function draw() {
   applyGravity(player);
 
   // 全エンティティを描画
-  background("#edf7fa");
+  background(0, 0, 32);
   drawPlayer(player);
   drawBlock(block);
 }
