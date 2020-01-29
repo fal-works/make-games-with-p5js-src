@@ -27,10 +27,8 @@ function applyJump(entity) {
 }
 
 function drawPlayer(entity) {
-  stroke(320, 30, 80);
-  stroke(20);
-  strokeWeight(4);
-  fill(320, 30, 100);
+  noStroke();
+  fill("#ffb677");
   square(entity.x, entity.y, 40, 8);
 }
 
@@ -46,10 +44,8 @@ function createBlock(y) {
 }
 
 function drawBlock(entity) {
-  stroke(200, 90, 80);
-  stroke(20);
-  strokeWeight(4);
-  fill(200, 90, 100);
+  noStroke();
+  fill("#5f6caf");
   rect(entity.x, entity.y, 81, 400, 8);
 }
 
@@ -66,7 +62,6 @@ let block;
 function setup() {
   createCanvas(800, 600);
   rectMode(CENTER);
-  colorMode(HSB, 360, 100, 100, 100);
 
   // プレイヤーを作成
   player = createPlayer();
@@ -84,7 +79,7 @@ function draw() {
   applyGravity(player);
 
   // 全エンティティを描画
-  background(255);
+  background("#edf7fa");
   drawPlayer(player);
   drawBlock(block);
 }
