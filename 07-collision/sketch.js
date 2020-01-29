@@ -76,10 +76,10 @@ function entitiesAreColliding(
 ) {
   // xとy、いずれかの距離が十分開いていたら、衝突していないので false を返す
 
-  const currentXDistance = abs(entityA.x - entityB.x); // 現在のx距離
+  let currentXDistance = abs(entityA.x - entityB.x); // 現在のx距離
   if (collisionXDistance <= currentXDistance) return false;
 
-  const currentYDistance = abs(entityA.y - entityB.y); // 現在のy距離
+  let currentYDistance = abs(entityA.y - entityB.y); // 現在のy距離
   if (collisionYDistance <= currentYDistance) return false;
 
   return true; // ここまで来たら、x方向でもy方向でも重なっているので true
@@ -98,7 +98,7 @@ let gameState;
 
 /** ブロックを上下ペアで作成し、`blocks` に追加する */
 function addBlockPair() {
-  const y = random(-100, 100);
+  let y = random(-100, 100);
   blocks.push(createBlock(y)); // 上のブロック
   blocks.push(createBlock(y + 600)); // 下のブロック
 }
@@ -134,7 +134,7 @@ function updateGame() {
 
   // 全エンティティの位置を更新
   updatePosition(player);
-  for (const block of blocks) updatePosition(block);
+  for (let block of blocks) updatePosition(block);
 
   // プレイヤーに重力を適用
   applyGravity(player);
@@ -146,7 +146,7 @@ function updateGame() {
   }
 
   // 衝突判定
-  for (const block of blocks) {
+  for (let block of blocks) {
     if (entitiesAreColliding(player, block, 20 + 40, 20 + 200)) {
       gameState = "gameover";
       break;
@@ -159,7 +159,7 @@ function drawGame() {
   // 全エンティティを描画
   background(0);
   drawPlayer(player);
-  for (const block of blocks) drawBlock(block);
+  for (let block of blocks) drawBlock(block);
 
   // ゲームオーバー状態なら、それ用の画面を表示
   if (gameState === "gameover") drawGameOverScreen();

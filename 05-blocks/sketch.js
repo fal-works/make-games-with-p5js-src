@@ -63,7 +63,7 @@ let blocks;
  * ブロックを上下ペアで作成し、`blocks` に追加する
  */
 function addBlockPair() {
-  const y = random(-100, 100);
+  let y = random(-100, 100);
   blocks.push(createBlock(y)); // 上のブロック
   blocks.push(createBlock(y + 600)); // 下のブロック
 }
@@ -88,7 +88,7 @@ function draw() {
 
   // 全エンティティの位置を更新
   updatePosition(player);
-  for (const block of blocks) updatePosition(block);
+  for (let block of blocks) updatePosition(block);
 
   // プレイヤーに重力を適用
   applyGravity(player);
@@ -96,7 +96,7 @@ function draw() {
   // 全エンティティを描画
   background(0);
   drawPlayer(player);
-  for (const block of blocks) drawBlock(block);
+  for (let block of blocks) drawBlock(block);
 }
 
 function mousePressed() {
