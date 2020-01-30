@@ -59,9 +59,7 @@ let player;
 /** ブロックエンティティの配列 */
 let blocks;
 
-/**
- * ブロックを上下ペアで作成し、`blocks` に追加する
- */
+/** ブロックを上下ペアで作成し、`blocks` に追加する */
 function addBlockPair() {
   let y = random(-100, 100);
   blocks.push(createBlock(y)); // 上のブロック
