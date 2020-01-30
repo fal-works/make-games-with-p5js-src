@@ -4,10 +4,10 @@
 1. [visuals](./04-visuals)
 1. [blocks](./05-blocks)
 1. [game-state](./06-game-state)
-1. [collision](./07-collision)
-
-- [one-on-one collision](./07-collision/one-on-one)
+1. [collision](./07-collision)  
+[one-on-one collision](./07-collision/one-on-one)
 
 ---
 
 1. [particles](./11-particles)
+1. [effects](./12-effects)
