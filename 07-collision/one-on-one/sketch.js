@@ -41,8 +41,12 @@ function drawBlock(entity) {
 
 const player = createPlayer();
 const block = createBlock(300);
-const collisionXDistance = 20 + 40;
-const collisionYDistance = 20 + 200;
+const playerCollisionXDistance = 20;
+const playerCollisionYDistance = 20;
+const blockCollisionXDistance = 40;
+const blockCollisionYDistance = 200;
+const collisionXDistance = playerCollisionXDistance + blockCollisionXDistance;
+const collisionYDistance = playerCollisionYDistance + blockCollisionYDistance;
 let xDistance = 0;
 let yDistance = 0;
 let xCollision = false;
@@ -62,6 +66,7 @@ function drawCollisionGuide() {
   const guideY = height - 20;
 
   push();
+  rectMode(CORNERS);
 
   strokeWeight(3);
   if (xCollision) stroke(255, 64, 64);
@@ -72,6 +77,41 @@ function drawCollisionGuide() {
   line(guideX, player.y, guideX, block.y);
 
   noStroke();
+  if (xCollision) {
+    fill(64, 255, 64, 64);
+    if (player.x < block.x)
+      rect(
+        player.x + playerCollisionXDistance,
+        0,
+        block.x - blockCollisionXDistance,
+        height
+      );
+    else
+      rect(
+        block.x + blockCollisionXDistance,
+        0,
+        player.x - playerCollisionXDistance,
+        height
+      );
+  }
+  if (yCollision) {
+    fill(64, 255, 64, 64);
+    if (player.y < block.y)
+      rect(
+        0,
+        player.y + playerCollisionYDistance,
+        width,
+        block.y - blockCollisionYDistance
+      );
+    else
+      rect(
+        0,
+        block.y + blockCollisionYDistance,
+        width,
+        player.y - playerCollisionYDistance
+      );
+  }
+
   textSize(24);
   if (xCollision) fill(255, 64, 64);
   else fill(255);
@@ -93,12 +133,12 @@ function setup() {
 function draw() {
   background(0);
   checkCollision();
-  if (xCollision && yCollision) fill(255, 192, 192);
+  if (xCollision && yCollision) fill(192, 192, 255);
   else fill(255);
-  drawPlayer(player);
   drawBlock(block);
-  drawEntityGuide(player);
+  drawPlayer(player);
   drawEntityGuide(block);
+  drawEntityGuide(player);
   drawCollisionGuide();
 }
 

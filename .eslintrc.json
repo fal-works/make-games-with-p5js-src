@@ -106,6 +106,8 @@
         "PIE": "readonly",
         "DEGREES": "readonly",
         "RADIANS": "readonly",
+        "CORNER": "readonly",
+        "CORNERS": "readonly",
         "createRadio": "readonly"
       },
       "parserOptions": {
