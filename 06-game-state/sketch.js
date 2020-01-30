@@ -65,8 +65,8 @@ let player;
 /** ブロックエンティティの配列 */
 let blocks;
 
-/** ゲームの状態。"playing" か "gameover" を入れるものとする */
-let gameState = "playing";
+/** ゲームの状態。"play" か "gameover" を入れるものとする */
+let gameState;
 
 /** ブロックを上下ペアで作成し、`blocks` に追加する */
 function addBlockPair() {
@@ -86,6 +86,9 @@ function drawGameOverScreen() {
 
 /** ゲームの初期化・リセット */
 function resetGame() {
+  // 状態をリセット
+  gameState = "play";
+
   // プレイヤーを作成
   player = createPlayer();
 
@@ -95,7 +98,7 @@ function resetGame() {
 
 /** ゲームの更新 */
 function updateGame() {
-  if (gameState !== "playing") return;
+  if (gameState !== "play") return;
 
   // ブロックの追加と削除
   if (frameCount % 120 === 1) addBlockPair(blocks); // 一定間隔でブロック追加
