@@ -141,10 +141,7 @@ function updateGame() {
   applyGravity(player);
 
   // プレイヤーが死んでいたらゲームオーバー
-  if (!playerIsAlive(player)) {
-    gameState = "gameover";
-    return;
-  }
+  if (!playerIsAlive(player)) gameState = "gameover";
 
   // 衝突判定
   for (let block of blocks) {
@@ -162,7 +159,7 @@ function drawGame() {
   drawPlayer(player);
   for (let block of blocks) drawBlock(block);
 
-  // ゲームオーバー状態なら、それ用の画面を表示
+  // ゲームオーバーならそれ用の画面を表示
   if (gameState === "gameover") drawGameoverScreen();
 }
 

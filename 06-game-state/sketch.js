@@ -84,7 +84,7 @@ function drawGameoverScreen() {
   text("GAME OVER", width / 2, height / 2); // 画面中央にテキスト表示
 }
 
-/** ゲームの初期化・リセット */
+/** ゲームのリセット */
 function resetGame() {
   // 状態をリセット
   gameState = "play";

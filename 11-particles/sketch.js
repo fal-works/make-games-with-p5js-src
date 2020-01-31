@@ -188,10 +188,7 @@ function updateGame() {
   for (let particle of particles) decreaseLife(particle);
 
   // プレイヤーが死んでいたらゲームオーバー
-  if (!playerIsAlive(player)) {
-    gameState = "gameover";
-    return;
-  }
+  if (!playerIsAlive(player)) gameState = "gameover";
 
   // 衝突判定
   for (let block of blocks) {
