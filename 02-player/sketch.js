@@ -7,7 +7,7 @@ function updatePosition(entity) {
   entity.y += entity.vy;
 }
 
-// プレイヤーエンティティ
+// プレイヤーエンティティ用
 
 function createPlayer() {
   return {
@@ -30,7 +30,7 @@ function drawPlayer(entity) {
   square(entity.x, entity.y, 40);
 }
 
-// ---- ゲーム全体に関わる変数 --------------------------------------------------
+// ---- ゲーム全体に関わる部分 --------------------------------------------------
 
 /** プレイヤーエンティティ */
 let player;
